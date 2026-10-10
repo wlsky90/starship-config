@@ -1,0 +1,57 @@
+add_newline = false
+
+format = """
+$os\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$line_break\
+$character"""
+
+[os]
+disabled = false
+format = "[$symbol]($style) "
+
+[os.symbols]
+Ubuntu = ""
+Macos = ""
+Linux = ""
+Windows = "󰍲"
+
+[username]
+show_always = true
+style_user = "green"
+style_root = "red"
+format = "[$user]($style)@"
+
+[hostname]
+ssh_only = false
+style = "green"
+format = "[$hostname]($style) "
+
+[directory]
+style = "#00AFFF"
+format = "[ $path]($style) "
+truncation_length = 0
+truncate_to_repo = false
+
+[git_branch]
+symbol = " "
+style = "green"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "yellow"
+format = "[$all_status$ahead_behind]($style) "
+modified = "!${count}"
+untracked = "?${count}"
+staged = "+${count}"
+deleted = "-${count}"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
