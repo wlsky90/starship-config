@@ -20,6 +20,7 @@ $directory\
 $git_branch\
 $git_status\
 $python\
+$conda\
 $line_break\
 $character"""
 
@@ -149,6 +150,19 @@ format = '([$symbol$virtualenv]($style) )'
 detect_extensions = []
 detect_files = []
 detect_folders = []
+
+
+# ============================================================
+# Conda environment
+# ============================================================
+
+[conda]
+
+# 显示激活的 Conda 环境，包括 base
+symbol = "🅒 "
+style = "yellow"
+format = '[$symbol$environment]($style) '
+ignore_base = false
 
 
 # ============================================================
