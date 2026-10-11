@@ -159,7 +159,7 @@ detect_folders = []
 [conda]
 
 # 显示激活的 Conda 环境，包括 base
-symbol = "🅒 "
+symbol = " "
 style = "yellow"
 format = '[$symbol$environment]($style) '
 ignore_base = false
