@@ -1,4 +1,16 @@
+# ============================================================
+# Starship configuration
+# Minimal / P10K-inspired
+# Ubuntu + macOS + Windows
+# ============================================================
+
+# 不在不同 prompt 之间增加额外空行
 add_newline = false
+
+
+# ============================================================
+# Prompt layout
+# ============================================================
 
 format = """
 $os\
@@ -10,48 +22,145 @@ $git_status\
 $line_break\
 $character"""
 
+# 第一行最右侧显示时间
+right_format = "$time"
+
+
+# ============================================================
+# Operating System
+# ============================================================
+
 [os]
 disabled = false
 format = "[$symbol]($style) "
 
 [os.symbols]
 Ubuntu = ""
+Debian = ""
+Fedora = ""
+Arch = ""
 Macos = ""
-Linux = ""
 Windows = "󰍲"
+Linux = ""
+
+
+# ============================================================
+# Username
+# ============================================================
 
 [username]
 show_always = true
+
+# 普通用户使用 Ubuntu 风格的绿色
 style_user = "green"
+
+# root 使用红色，避免误操作
 style_root = "red"
+
 format = "[$user]($style)@"
 
+
+# ============================================================
+# Hostname
+# ============================================================
+
 [hostname]
+
+# 本地和 SSH 都显示 hostname
 ssh_only = false
+
 style = "green"
+
 format = "[$hostname]($style) "
 
+
+# ============================================================
+# Current directory
+# ============================================================
+
 [directory]
+
+# 清爽的蓝色，不使用 bold
 style = "#00AFFF"
+
+# Nerd Font folder icon
 format = "[ $path]($style) "
+
+# 显示完整路径
 truncation_length = 0
+
+# 不限制到 Git repository 根目录
 truncate_to_repo = false
 
+
+# ============================================================
+# Git branch
+# ============================================================
+
 [git_branch]
+
 symbol = " "
+
 style = "green"
+
 format = "[$symbol$branch]($style) "
 
+
+# ============================================================
+# Git status
+# ============================================================
+
 [git_status]
+
 style = "yellow"
+
 format = "[$all_status$ahead_behind]($style) "
+
+# Modified
 modified = "!${count}"
+
+# Untracked
 untracked = "?${count}"
+
+# Staged
 staged = "+${count}"
+
+# Deleted
 deleted = "-${count}"
+
+# Ahead of remote
 ahead = "⇡${count}"
+
+# Behind remote
 behind = "⇣${count}"
 
+
+# ============================================================
+# Time
+# ============================================================
+
+[time]
+
+disabled = false
+
+# 24-hour clock
+time_format = "%H:%M:%S"
+
+# 低饱和灰青色，避免抢占视觉注意力
+style = "#658B8B"
+
+# Nerd Font clock icon
+format = "[󰥔 $time]($style)"
+
+
+# ============================================================
+# Command prompt
+# ============================================================
+
 [character]
+
+# 正常命令
 success_symbol = "[❯](green)"
+
+# 上一个命令执行失败
 error_symbol = "[❯](red)"
