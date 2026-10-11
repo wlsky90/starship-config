@@ -19,6 +19,7 @@ $hostname\
 $directory\
 $git_branch\
 $git_status\
+$python\
 $line_break\
 $character"""
 
@@ -133,6 +134,21 @@ ahead = "⇡${count}"
 
 # Behind remote
 behind = "⇣${count}"
+
+
+# ============================================================
+# Python virtual environment
+# ============================================================
+
+[python]
+
+# 仅在激活虚拟环境时显示环境名称
+symbol = "🐍 "
+style = "yellow"
+format = '([$symbol$virtualenv]($style) )'
+detect_extensions = []
+detect_files = []
+detect_folders = []
 
 
 # ============================================================
